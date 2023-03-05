@@ -14,8 +14,8 @@ const Header = () => {
           </Link>
         </div>
         <div>
-          <Link className="p-3 m-5 bg-slate-700 text-yellow-100 rounded-lg hover:bg-black hover:text-white" to="/">Last Block</Link>
-          <Link className="p-3 bg-slate-700 text-yellow-100 rounded-lg hover:bg-black hover:text-white" to="/address">Address</Link>
+          <Link className="p-3 bg-slate-700 text-yellow-100 rounded-lg hover:bg-black hover:text-white" to="/">Last Block</Link>
+          <Link className="p-3 m-5 bg-slate-700 text-yellow-100 rounded-lg hover:bg-black hover:text-white" to="/address">Balance</Link>
         </div>
       </div>
       <Switch>
