@@ -1,8 +1,10 @@
-# Ethereum Block Explorer
+# Welcome to the Ethereum Block Explorer!
 
-The lessons this week covered the Ethereum JSON-RPC API and the `ethers.js` library giving us the ability to query the Ethereum blockchain and make transactions!
+This project is designed to help you explore and query the Ethereum blockchain using the Ethereum JSON-RPC API and the ethers.js library. By building your own Ethereum Block Explorer, you will gain a better understanding of how the blockchain works and how you can interact with it.
 
-Let's put that knowledge to the test by building our very own **Ethereum Block Explorer**!
+Block explorers are essential tools that allow us to view a variety of information about the blockchain, including data about the network, blocks, transactions, accounts, and more. You may be familiar with popular Ethereum block explorers like Etherscan, which provides a wealth of information about the Ethereum blockchain.
+
+This project is open-ended, and there are many different features you can choose to build. We have included some suggestions and challenges to get you started, but feel free to use your creativity and imagination.
 
 Blockexplorers give us the ability to view lots of different information about the blockchain including data about:
   * the blockchain network itself
@@ -11,13 +13,14 @@ Blockexplorers give us the ability to view lots of different information about t
   * accounts
   * and many other things
   
-[Etherscan](https://etherscan.io/) is a good example of an Ethereum blockexplorer. Check it out to get familiar with how blockexplorers generally work.
-
-This particular project is very much open-ended. We'll add some challenges here to get your imagination going, but use Etherscan as a guide for features you might consider building in your project.
 
 ## Getting Started
 
 Clone this project to pull down some basic starter code.
+```sh
+git clone git@github.com:ArnaudBand/blockexplorer.git
+
+```
 
 After that cd into the base directory of the project and run `npm install` to download all the project dependencies.
 
@@ -71,17 +74,6 @@ REACT_APP_ALCHEMY_API_KEY=YOUR_ALCHEMY_API_KEY
 
 Do not remove the `REACT_APP_` prefix. React uses that to import env variables.
 
-**⚠️ Note**
-
-> Your Alchemy API Mainnet Key is a sensitive piece of data. If we were\
-> building an enterprise app to conquer the world we would never place\
-> this sensitive data in the client code of our blockexplorer project that\
-> could potentially be read by anyone.
->
-> But hey, we're just learning this stuff right now, not conquering anything\
-> yet! :-) It won't be the end of the world to put the Alchemy API key in our\
-> front-end code for this project.
-
 ## 3. Start the webserver
 
 `npm start`
@@ -92,37 +84,12 @@ The webpage will automatically reload when you make code changes.
 
 What you'll see in the browser is Ethereum Mainnet's current block number. Not very exciting, but that's where you come in to save the day!
 
-## 4. Make the blockexplorer cool!
+## 4. Add More Information About the Current Block
 
-The starter code pulls down the current block number for you.
+Use the alchemy.core.getBlock() function to retrieve more information about the current block and display it in the page. For example, you could display the block's timestamp, the number of transactions, or the miner's address.
 
-Can you get more information about the current block and display it in the page?
-Take a look at [alchemy.core.getBlock()](https://docs.alchemy.com/reference/sdk-getblock?a=eth-bootcamp) for how you might go about that.
+## 5. Display Transactions for a Given Block
 
-Blocks contains transactions. Can you get the list of transactions for a given block? Can you use [alchemy.core.getBlockWithTransactions()](https://docs.alchemy.com/reference/sdk-getblockwithtransactions?a=eth-bootcamp) for this?
+Use the alchemy.core.getBlockWithTransactions() function to retrieve the list of transactions for a given block. Display this information in the page, and allow users to click on individual transactions for more information.
 
-How about getting details for individual transactions? The [alchemy.core.getTransactionReceipt()](https://docs.alchemy.com/reference/sdk-gettransactionreceipt?a=eth-bootcamp) looks handy.
-
-## 5. More ideas to think about
-
-- Connecting the dots.
-  - Allow users to click on a block listed in the webpage to get the block's details including its list of transactions
-  - From the list of transactions allow users to click on specific transactions to get the details of the transaction
-- Make an accounts page where a user can look up their balance or someone else's balance
-
-## 6. Supercharge your blockexplorer using AlchemySDK's specialized APIs
-
-By using the AlchemySDK you can really supercharge your projects with additional API functionality that isn't included in the `ethers.js` package including:
-  * NFT methods
-  * WebSocket methods
-  * Alchemy's Transact API functionality
-  * endpoints for using Alchemy's Notify Webhooks
-
-Read more about the above in the [Alchemy SDK Surface docs](https://docs.alchemy.com/reference/alchemy-sdk-api-surface-overview?a=eth-bootcamp). Using the SDK can implement the following features?
-
-- Given a contract address and token id, can you get the NFT's metadata?
-- What is the floor price of an NFT right now?
-- Did a pending transaction get mined?
-- What transfers did an address receive this year?
-
-Good luck and have fun!
+## 6. Get Details of Individual
